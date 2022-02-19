@@ -1,0 +1,83 @@
+game:GetService("StarterGui"):SetCore("SendNotification",{     
+
+Title = "Credits:",     
+
+Text = "Script by oxide$",
+Button1 = "wow!! 😱",
+
+Duration = 5
+
+})
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Oxide$, v2", "Ocean")
+
+
+local Main = Window:NewTab("Main")
+local Player = Window:NewTab("Player")
+local Credits = Window:NewTab("Credits")
+
+local MainSec = Main:NewSection("Main")
+local PlayerSec = Player:NewSection("FOV Settings")
+local PlayerSec2 = Player:NewSection("Player Settings")
+local CreditsSec = Credits:NewSection("Script by Oxide$")
+local MainSec2 = Main:NewSection("Character")
+
+CreditsSec:NewButton("Copy Discord Link", "Copy Discord", function()
+    setclipboard("https://discord.gg/vBCxHjc6qK")
+    game:GetService("StarterGui"):SetCore("SendNotification",{     
+
+Title = "Discord ⭐",
+
+Text = "link Copied",
+Button1 = "Ok!",
+
+Duration = 3
+
+})
+end)
+
+
+
+PlayerSec:NewButton("FOV: 120", "Changes the FOV", function()
+    workspace.CurrentCamera.FieldOfView=120
+end)
+
+PlayerSec:NewButton("FOV: 90", "Changes the FOV", function()
+    workspace.CurrentCamera.FieldOfView=90
+end)
+
+PlayerSec:NewButton("FOV: default", "Changes the FOV", function()
+    workspace.CurrentCamera.FieldOfView=70
+end)
+
+PlayerSec2:NewSlider("Walkspeed", "Changes the Walkspeed", 100, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+PlayerSec2:NewSlider("JumpPower", "Changes the JumpPower", 150, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+MainSec:NewButton("Anti-Afk", "Disables roblox's kick system.", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/fu0LGEYL"))()
+end)
+
+MainSec:NewButton("Chat-Spy", "Shows Chat when disabled", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/yuaPqDW8"))()
+end)
+
+MainSec:NewButton("Inf-Yield", "Loads Infinite Yield", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+MainSec2:NewButton("Infinite-Jump", "Jumps Infinitely", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/Q0F1njnh'))()
+end)
+
+MainSec2:NewButton("Speed (C)", "Gives you speed", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/angeloX041/Speedc/main/SuperSpeedC ", true))()
+end)
+    
+
+
